@@ -1,0 +1,269 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+:root {
+  /* COLOR VARIABLES */
+  --reddish: hsl(14, 100%, 66%);
+  --darkReddish: hsl(14, 100%, 60%);
+  --yellow: hsl(43, 100%, 72%);
+  --darkYellow: hsl(43, 100%, 66%);
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ---------------------- */
+/* LIBRARY CONTAINER */
+
+body {
+  /* element appearance */
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--yellow);
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  /* children */
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 90px) 1fr;
+}
+
+/* ---------------------- */
+/* Header of the library */
+
+.library-top-header {
+  /* element appearance */
+  grid-area: 1 / 1 / 2 / 6;
+  background-color: var(--reddish);
+  position: fixed;
+  width: 100%;
+  height: 90px;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 35%);
+
+  /* children */
+  display: grid;
+  grid-template-columns: 1fr 12fr;
+  color: white;
+}
+
+/* Logo of the header of the library */
+.library-top-header-logo {
+  /* element appearance */
+  grid-area: 1 / 1 / 2 / 2;
+  border-right: 1px solid var(--yellow);
+  z-index: 1;
+
+  /* children */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Title of the header of the library */
+.library-top-header-title {
+  /* element appearance */
+  grid-area: 1 / 1 / 2 / -1;
+  z-index: 0;
+
+  /* children */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ---------------------- */
+/* Content of the library */
+
+/* addbook popup */
+.add-book-popup-container {
+  /* element appearance */
+  grid-area: 1 / 1 / 3 / 5;
+  z-index: 1;
+  background-color: transparent;
+  visibility: hidden;
+
+  /* children */
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+
+.show {
+  visibility: visible;
+  transition: 1s;
+}
+
+/* addbook popup background */
+.add-book-popup-container-bg {
+  /* element appearance */
+  grid-area: 1 / 1 / -1 / -1;
+  background-color: var(--darkYellow);
+  opacity: 0.3;
+}
+
+/* form */
+.add-book-popup-container > form {
+  /* element appearance */
+  grid-area: 2 / 3 / 5 / 4;
+  background-color: var(--reddish);
+  border-radius: 6px;
+  z-index: 1;
+
+  /* children */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+}
+
+.form-lable {
+  /* element appearance */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+input {
+  border-radius: 5px;
+  border: 2px solid transparent;
+}
+
+input[type="button"] {
+  background-color: var(--yellow);
+  width: 35%;
+}
+
+input[type="button"]:hover {
+  cursor: pointer;
+  background-color: var(--darkYellow);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+.library-main-container {
+  /* element appearance */
+  grid-area: 2 / 1 / -1 / -1;
+
+  /* children */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 100px 1fr;
+}
+
+/* Top section of the library container */
+
+.library-main-container-top {
+  /* element appearance */
+  grid-area: 1 / 1 / 2 / -1;
+
+  /* children */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.library-main-container-top > button {
+  /* element appearance */
+  border: none;
+  background-color: var(--reddish);
+  width: 10%;
+  height: 30%;
+  border-radius: 5px;
+  transition: 200ms;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.library-main-container-top > button:hover {
+  transition: 200ms;
+  cursor: pointer;
+  background-color: var(--darkReddish);
+}
+
+/* Bot section of the library container */
+
+.library-main-container-bot {
+  /* element appearance */
+  grid-area: 2 / 1 / -1 / -1;
+
+  /* children */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 360px;
+  padding-left: 9%;
+  padding-right: 9%;
+  gap: 15px;
+}
+
+/* Book card */
+
+.card {
+  /* element appearance */
+  /* border: 1px solid var(--reddish); */
+  background-color: var(--reddish);
+  border-radius: 6px;
+  overflow: hidden;
+
+  /* children */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 4fr 1fr;
+  color: white;
+}
+
+/* Book card display */
+
+.card-display {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  align-items: center;
+  padding-left: 10px;
+}
+
+.card-display-section {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr;
+}
+
+/* Book card parameters */
+
+.card-param {
+  /* element appearance */
+  grid-area: 2 / 1 / 3 / 2;
+
+  /* children */
+  display: grid;
+}
+
+.card-param > button {
+  border: none;
+  background-color: var(--darkReddish);
+  color: white;
+}
+
+.card-param-edit:hover {
+  background-color: var(--yellow);
+  color: var(--darkReddish);
+  cursor: pointer;
+}
+
+.card-param-remove:hover {
+  background-color: gray;
+  cursor: pointer;
+}
